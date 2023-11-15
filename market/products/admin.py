@@ -1,6 +1,12 @@
 from django.contrib import admin  # noqa F401
 
-from products.models import Banner, Product
+from .models import Product, Banner
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = "pk", "name", "description_short", "date_of_publication", "category_id"
+    list_display_links = ("name",)
 
 
 class DetailsInline(admin.TabularInline):
@@ -11,12 +17,3 @@ class DetailsInline(admin.TabularInline):
 class BannerAdmin(admin.ModelAdmin):
     list_display = "product", "image", "is_active"
     list_display_links = ("product",)
-
-
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    inlines = [
-        DetailsInline,
-    ]
-    list_display = ("name",)
-    list_display_links = ("name",)

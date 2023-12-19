@@ -119,3 +119,7 @@ class ProductsViewsView(ListView):
         context = super().get_context_data(**kwargs)
         context["products_views"] = ProductsViews.objects.all()
         return context
+
+
+class DiscountListView(ListView):
+    template_name = "products/discount_products.jinja2"

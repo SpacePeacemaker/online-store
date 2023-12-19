@@ -167,3 +167,17 @@ class ProductsViews(models.Model):
         Product, on_delete=models.CASCADE, related_name="products_views", verbose_name="Продукт"
     )
     created_at = models.DateTimeField(default=timezone.now)
+
+
+class DiscountProduct(models.Model):
+    percentage = models.PositiveIntegerField(default=0)
+    products = models.ManyToManyField(Product, related_name="discount_products")
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+
+class DiscountSet(models.Model):
+    percentage = models.PositiveIntegerField(default=0)
+    categories = models.ManyToManyField(Category, related_name="discount_sets")
+    start_date = models.DateField()
+    end_date = models.DateField()

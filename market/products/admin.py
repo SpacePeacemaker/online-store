@@ -1,6 +1,17 @@
 from django.contrib import admin  # noqa F401
 
-from .models import Category, Product, Banner, Review, ProductImage, ProductDetail, Detail, ProductsViews
+from .models import (
+    Category,
+    Product,
+    Banner,
+    Review,
+    ProductImage,
+    ProductDetail,
+    Detail,
+    ProductsViews,
+    DiscountSet,
+    DiscountProduct,
+)
 
 
 @admin.register(Category)
@@ -47,3 +58,15 @@ class ProductDetailAdmin(admin.ModelAdmin):
 class ProductsViewsAdmin(admin.ModelAdmin):
     list_display = "product", "user", "created_at"
     list_display_links = "product", "user"
+
+
+@admin.register(DiscountSet)
+class DiscountSetAdmin(admin.ModelAdmin):
+    list_display = "pk", "percentage", "start_date", "end_date"
+    list_display_links = ("pk",)
+
+
+@admin.register(DiscountProduct)
+class DiscountProductAdmin(admin.ModelAdmin):
+    list_display = "pk", "percentage", "start_date", "end_date"
+    list_display_links = ("pk",)

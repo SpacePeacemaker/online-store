@@ -170,14 +170,22 @@ class ProductsViews(models.Model):
 
 
 class DiscountProduct(models.Model):
-    percentage = models.PositiveIntegerField(default=0)
+    percentage = models.PositiveIntegerField(default=0, verbose_name="процент скидки")
     products = models.ManyToManyField(Product, related_name="discount_products")
     start_date = models.DateField()
     end_date = models.DateField()
 
+    def is_active(self):
+        now = timezone.now().date()
+        return self.start_date <= now <= self.end_date
+
 
 class DiscountSet(models.Model):
-    percentage = models.PositiveIntegerField(default=0)
+    percentage = models.PositiveIntegerField(default=0, verbose_name="процент скидки")
     categories = models.ManyToManyField(Category, related_name="discount_sets")
     start_date = models.DateField()
     end_date = models.DateField()
+
+    def is_active(self):
+        now = timezone.now().date()
+        return self.start_date <= now <= self.end_date

@@ -1,0 +1,122 @@
+[
+  {
+    "model": "products.discountproduct",
+    "pk": 1,
+    "fields": {
+      "percentage": 10,
+      "start_date": "2023-12-19",
+      "end_date": "2023-12-24",
+      "products": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 2,
+    "fields": {
+      "percentage": 20,
+      "start_date": "2023-12-19",
+      "end_date": "2023-12-26",
+      "products": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 3,
+    "fields": {
+      "percentage": 25,
+      "start_date": "2023-12-18",
+      "end_date": "2023-12-25",
+      "products": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 4,
+    "fields": {
+      "percentage": 30,
+      "start_date": "2023-12-24",
+      "end_date": "2023-12-27",
+      "products": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 5,
+    "fields": {
+      "percentage": 35,
+      "start_date": "2023-12-27",
+      "end_date": "2023-12-31",
+      "products": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 6,
+    "fields": {
+      "percentage": 40,
+      "start_date": "2023-12-17",
+      "end_date": "2023-12-24",
+      "products": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 7,
+    "fields": {
+      "percentage": 30,
+      "start_date": "2023-12-18",
+      "end_date": "2023-12-25",
+      "products": [
+        8
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 8,
+    "fields": {
+      "percentage": 50,
+      "start_date": "2023-12-19",
+      "end_date": "2023-12-23",
+      "products": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 9,
+    "fields": {
+      "percentage": 20,
+      "start_date": "2023-12-20",
+      "end_date": "2023-12-27",
+      "products": [
+        11
+      ]
+    }
+  },
+  {
+    "model": "products.discountproduct",
+    "pk": 10,
+    "fields": {
+      "percentage": 0,
+      "start_date": "2023-12-21",
+      "end_date": "2023-12-23",
+      "products": [
+        11
+      ]
+    }
+  }
+]

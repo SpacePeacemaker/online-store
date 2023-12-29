@@ -203,12 +203,14 @@ class ProductDetailView(DetailView, BaseComparisonView):
         review_form = ReviewForm(request.POST)
         cart_form = CartAddProductForm(request.POST)
 
+        # FIXME - какую роль играет условие "btnform2" in request.POST ?
         if review_form.is_valid() and "btnform2" in request.POST:
             review_form.instance.user = self.request.user
             review_form.instance.product = self.get_object()
             review_form.save()
             return redirect("products:product-detail", pk=review_form.instance.product.pk)
 
+        # FIXME - какую роль играет условие "btnform1" in request.POST ?
         elif cart_form.is_valid() and "btnform1" in request.POST:
             shop_name = request.POST["shop_name"]
             quantity = cart_form.cleaned_data["quantity"]

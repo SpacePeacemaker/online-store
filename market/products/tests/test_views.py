@@ -159,12 +159,14 @@ class ProductDetailReviewTest(TestCase):
         """Тестирование отправки POST-запроса"""
 
         pk: int = 1
-        review_form: dict[str, int] = {
+        review_form: dict[str, int | str] = {
             "text": "test review",
             "rating": 5,
+            "action": "add_review_or_cart",
         }
         response = self.client.post(
-            reverse("products:product-detail", args=(pk,)), data=review_form, action="add_review_or_cart"
+            reverse("products:product-detail", args=(pk,)),
+            data=review_form,
         )
         self.assertIsNotNone(response)
 
